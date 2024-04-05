@@ -28,6 +28,7 @@ function package:registerCommands()
 			end)
 		end)
 
+		SILE.call("pagebreak") -- Blank page for printing
 		SILE.call("pagebreak")
 	end)
 

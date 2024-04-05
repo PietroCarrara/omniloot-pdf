@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
     python extract-data.py
     sile main.sil
-    pdftk main.pdf cat 1-43 output out.pdf
+    pdftk main.pdf cat 1-44 output out.pdf
   '';
 
   installPhase = ''
