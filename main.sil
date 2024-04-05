@@ -1,4 +1,4 @@
-\begin{document}
+\begin[class=main]{document}
 \use[module="packages.loottables"]
 \set[parameter="document.parindent", value=0]
 \include[src=xml-tables/artifacts-1.xml]

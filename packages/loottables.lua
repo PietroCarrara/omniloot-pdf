@@ -1,4 +1,4 @@
-local base = require"packages.base"
+local base = require("packages.base")
 local package = pl.class(base)
 package._name = "loottables"
 
@@ -26,7 +26,6 @@ function package:registerCommands()
 		SILE.call("font", { filename = "./fonts/Minion Pro Display.otf", size = 12 }, function()
 			SILE.process(content)
 		end)
-		SILE.typesetter:leaveHmode()
 	end)
 end
 
