@@ -3,6 +3,34 @@ local package = pl.class(base)
 package._name = "loottables"
 
 function package:registerCommands()
+	self:registerCommand("cover", function (options, _)
+
+		SILE.call("center", {}, function ()
+			SILE.call("skip", { height = "5cm" })
+
+			SILE.call("font", { filename = "./fonts/Newcomen Black.otf", size = 36 }, function()
+				SILE.typesetter:typeset(options["title"])
+			end)
+
+			SILE.call("skip", { height = "3cm" })
+
+			SILE.call("font", { filename = "./fonts/Minion Pro Display.otf", size = 28 }, function()
+				SILE.typesetter:typeset("This volume contains the following tables:")
+			end)
+
+			SILE.call("skip", { height = "1cm" })
+
+			SILE.call("font", { filename = "./fonts/Newcomen Black.otf", size = 16 }, function()
+				for _, i in ipairs(split(options["tables"], "|")) do
+					SILE.call("par")
+					SILE.typesetter:typeset(i)
+				end
+			end)
+		end)
+
+		SILE.call("pagebreak")
+	end)
+
 	local itemNumber = 0
 	self:registerCommand("itemtable", function(options, content)
 		itemNumber = 0
@@ -27,6 +55,14 @@ function package:registerCommands()
 			SILE.process(content)
 		end)
 	end)
+end
+
+function split(inputstr, sep)
+	local t={}
+	for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+		table.insert(t, str)
+	end
+	return t
 end
 
 return package

@@ -7,6 +7,7 @@ stdenv.mkDerivation rec {
   src = ./.;
 
   buildInputs = [
+    pdftk
     sile
     (python3.withPackages (pip: [
       pip.beautifulsoup4
@@ -16,10 +17,11 @@ stdenv.mkDerivation rec {
   buildPhase = ''
     python extract-data.py
     sile main.sil
+    pdftk main.pdf cat 1-43 output out.pdf
   '';
 
   installPhase = ''
     mkdir -p "$out"
-    cp main.pdf "$out/"
+    cp out.pdf "$out/"
   '';
 }
