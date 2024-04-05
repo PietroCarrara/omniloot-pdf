@@ -1,0 +1,15 @@
+\begin{document}
+\use[module="packages.loottables"]
+\set[parameter="document.parindent", value=0]
+\include[src=xml-tables/artifacts-1.xml]
+\include[src=xml-tables/minor-magic-items-1.xml]
+\include[src=xml-tables/minor-magic-items-2.xml]
+\include[src=xml-tables/minor-magic-items-3.xml]
+\include[src=xml-tables/minor-magic-items-4.xml]
+\include[src=xml-tables/minor-magic-items-5.xml]
+\include[src=xml-tables/minor-magic-items-6.xml]
+\include[src=xml-tables/minor-magic-items-7.xml]
+\include[src=xml-tables/minor-magic-weapons-1.xml]
+\include[src=xml-tables/minor-magic-weapons-3.xml]
+\include[src=xml-tables/minor-magic-weapons-4.xml]
+\end{document}
